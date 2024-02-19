@@ -1,8 +1,9 @@
 const express = require("express");
+require("dotenv").config()
 
 const app = express()
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 app.get('/api/user_details',(req,res)=>{
     res.send({
@@ -10,7 +11,7 @@ app.get('/api/user_details',(req,res)=>{
             name:"rakesh",
             age:22,
             contact:7546376367
-        }
+        },env:process.env.NAME
     })
 })
 
